@@ -1,0 +1,54 @@
+{
+  "author": "xdimh",
+  "generator": "site",
+  "title": "一条道走到黑",
+  "description": "一条道走到黑",
+  "variables": {
+
+  },
+  "plugins": [
+    "editlink",
+    "prism",
+    "jsfiddle",
+    "image-captions",
+    "jsbin",
+    "atoc",
+    "tbfed-pagefooter",
+    "search-plus",
+    "search",
+    "-sharing",
+    "-highlight"
+  ],
+  "pluginsConfig": {
+    "editlink": {
+      "base": "http://hz-gitlab.youzibuy.com/fe/gitbook/tree/master",
+      "label": "编辑此页面",
+      "multilingual": false
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-solarizedlight.css"
+      ]
+    },
+    "tbfed-pagefooter": {
+      "copyright":"&copy Youzibuy FE Team",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "jsfiddle":{
+      "type":"script",
+      "tabs":["result","js","css", "html"],
+      "height": "500",
+      "width": "500",
+      "fontColor": "00FF00"
+    },
+    "image-captions": {
+      "caption": "Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_"
+    },
+    "atoc": {
+      "addClass": true,
+      "className": "atoc"
+    }
+  },
+  "language" : 	"zh-hans"
+}
