@@ -17,14 +17,18 @@
     "tbfed-pagefooter",
     "search-plus",
     "search",
+    "-disqus",
     "-sharing",
     "-highlight"
   ],
   "pluginsConfig": {
     "editlink": {
-      "base": "http://hz-gitlab.youzibuy.com/fe/gitbook/tree/master",
+      "base": "",
       "label": "编辑此页面",
       "multilingual": false
+    },
+    "disqus": {
+      "shortName": "zzy7186"
     },
     "prism": {
       "css": [
