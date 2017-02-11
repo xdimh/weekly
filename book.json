@@ -17,7 +17,6 @@
     "tbfed-pagefooter",
     "search-plus",
     "search",
-    "-disqus",
     "-sharing",
     "-highlight"
   ],
@@ -26,9 +25,6 @@
       "base": "",
       "label": "编辑此页面",
       "multilingual": false
-    },
-    "disqus": {
-      "shortName": "zzy7186"
     },
     "prism": {
       "css": [
