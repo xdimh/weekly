@@ -230,3 +230,4 @@ UTF-8就是其中的一种实现方式。后面会讲Unicode的编码方式如�
 5. [Unicode与JavaScript详解 —— 阮一峰](http://www.ruanyifeng.com/blog/2014/12/unicode.html)
 6. [Unicode编码及其实现：UTF-16、UTF-8，and more](http://blog.csdn.net/thl789/article/details/7506133)
 7. [通过javascript进行UTF-8编码](https://segmentfault.com/a/1190000005794963)
+8. [按位操作符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators)
