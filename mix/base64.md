@@ -221,7 +221,7 @@ UTF-8就是其中的一种实现方式。后面会讲Unicode的编码方式如�
   
 ### [完整代码](https://github.com/xdimh/jsTools/blob/master/base64_with_comment.js)
 
-###参考资料
+### 参考资料
 
 1. [维基百科UTF-8](https://zh.wikipedia.org/wiki/UTF-8)
 2. [维基百科Unicode](https://zh.wikipedia.org/wiki/Unicode)
