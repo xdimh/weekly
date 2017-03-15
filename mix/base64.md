@@ -218,6 +218,17 @@ UTF-8就是其中的一种实现方式。后面会讲Unicode的编码方式如�
       ...
   }
   ```
+
+### Update: 2017-03-15
+  
+根据[rfc3548](https://tools.ietf.org/html/rfc3548#page-6),base64中的某些字符,在一些文件系统环境下或者url中会有特殊的含义,比如斜杠,所以为了得到web safe 的base64编码,则需要将第62个字符和第63个字符(编号从0开始)替换成 ``-``(minus) 和 ``_``(underscore) 减号和下划线。
+可以对编码后的base64进行字符替换如下 :
+
+```javascript
+function urlSafeBase64Encode(input) {
+    return input.replace('+', '-').replace('/', '_');
+}
+```
   
 ### [完整代码](https://github.com/xdimh/jsTools/blob/master/base64_with_comment.js)
 

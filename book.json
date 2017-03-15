@@ -22,7 +22,7 @@
   ],
   "pluginsConfig": {
     "editlink": {
-      "base": "",
+      "base": "https://github.com/xdimh/weekly",
       "label": "编辑此页面",
       "multilingual": false
     },
