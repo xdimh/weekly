@@ -11,7 +11,7 @@
 - ``mv unzip-path/ngrok unzip-path/ngrok2 /usr/local/bin``  或者 再path环境变量中添加解压后的目录路径。
 - 使用
   1. 配置ngrok 配置文件 （国内版本不需要）
-      ```ymal
+      ```
        authtoken: youtoken 
        json_resolver_url: ""
        dns_resolver_ips: []

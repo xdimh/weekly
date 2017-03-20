@@ -112,4 +112,5 @@ gulp插件就是通过through2创建一个Transform,并执行一些操作然后�
 2. [node源码解析 -- Stream探究](https://segmentfault.com/a/1190000003479884)
 3. [Node.js Stream - 进阶篇](http://tech.meituan.com/stream-internals.html)
 4. [Node Stream](https://nodejs.org/api/stream.html)
-5. [源码](https://github.com/nodejs/node/blob/master/lib/_stream_readable.js)
+5. [stream-handbook](https://github.com/substack/stream-handbook)
+6. [源码](https://github.com/nodejs/node/blob/master/lib/_stream_readable.js)
