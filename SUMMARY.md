@@ -13,6 +13,6 @@
     - [base64的编码和解码](mix/base64.md)
     - [使用ngrok让你的本地mock可以提供给外网访问](mix/ngrok.md)
     - [gulp插件开发](mix/gulp-plugin-develop.md)
-    - [Redux 之我见](mix/redux-introduction.md)
+    - [Redux 简介](mix/redux-introduction.md)
 * [源码阅读]()
     - [gulp-prefix插件源码阅读](source-code-read/gulp-prefix.md)
