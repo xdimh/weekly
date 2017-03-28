@@ -7,6 +7,8 @@
 
 # gulp task generated
 .publish
+.publish-github
+.publish-coding-net
 
 ## Dependency directory
 ## Commenting this out is preferred by some people, see
