@@ -1,0 +1,626 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Node Stream 初窥 · 一条道走到黑</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="xdimh">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-atoc/atoc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../mix/" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    React 开发汇总
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../react/react-life-cycle.html">
+            
+                <a href="../react/react-life-cycle.html">
+            
+                    
+                    React 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    React Native 开发汇总 
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../react-native/rn-dev-prepare.html">
+            
+                <a href="../react-native/rn-dev-prepare.html">
+            
+                    
+                    Mac上搭建RN开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../react-native/rn-introduction.html">
+            
+                <a href="../react-native/rn-introduction.html">
+            
+                    
+                    用JavaScript来写客户端 — React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Electron 开发汇总
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Node 相关
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="node-stream.html">
+            
+                <a href="node-stream.html">
+            
+                    
+                    Node Stream 初窥
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mix/">
+            
+                <a href="../mix/">
+            
+                    
+                    大杂烩
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../mix/regular-expression.html">
+            
+                <a href="../mix/regular-expression.html">
+            
+                    
+                    JavaScript中的正则表达式之正向环视(正向断言)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../mix/base64.html">
+            
+                <a href="../mix/base64.html">
+            
+                    
+                    base64的编码和解码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../mix/ngrok.html">
+            
+                <a href="../mix/ngrok.html">
+            
+                    
+                    使用ngrok让你的本地mock可以提供给外网访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../mix/gulp-plugin-develop.html">
+            
+                <a href="../mix/gulp-plugin-develop.html">
+            
+                    
+                    gulp插件开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../mix/redux-introduction.html">
+            
+                <a href="../mix/redux-introduction.html">
+            
+                    
+                    Redux 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    源码阅读
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../source-code-read/gulp-prefix.html">
+            
+                <a href="../source-code-read/gulp-prefix.html">
+            
+                    
+                    gulp-prefix插件源码阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Node Stream 初窥</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="node-stream-&#x521D;&#x7AA5;">Node Stream &#x521D;&#x7AA5;</h2>
+<p>Node &#x5C06;&#x51E0;&#x4E4E;&#x6240;&#x6709; IO &#x64CD;&#x4F5C;&#x90FD;&#x62BD;&#x8C61;&#x6210;&#x4E86; Stream &#x7684;&#x64CD;&#x4F5C;&#x3002;Stream &#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;Stream &#x60F3;&#x8C61;&#x6210;&#x6C34;&#x6D41;&#x7BA1;&#x9053;,&#x7BA1;&#x9053;&#x6709;&#x53EA;&#x7528;&#x4E8E;&#x8F93;&#x51FA;&#x7684;,&#x6709;&#x53EA;&#x63A5;&#x6536;&#x7684;,&#x6709;&#x8D1F;&#x8D23;&#x4E2D;&#x95F4;&#x8FC7;&#x6E21;&#x7684;(&#x65E2;&#x6709;&#x8F93;&#x5165;&#x7684;&#x4E00;&#x7AEF;,&#x4E5F;&#x6709;&#x8F93;&#x51FA;&#x7684;&#x4E00;&#x7AEF;)&#x3002;&#x603B;&#x4E4B;&#x5C31;&#x662F;&#x751F;&#x4EA7;&#x4E1C;&#x897F;,&#x6216;&#x8005;&#x6D88;&#x8D39;&#x4E1C;&#x897F;,&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x53EF;&#x4EE5;&#x662F;Buffer,&#x53EF;&#x4EE5;&#x662F;String,&#x751A;&#x81F3;&#x662F;&#x53EF;&#x4EE5;Object&#x3002;&#x4ECE;Node &#x5B98;&#x65B9;&#x6587;&#x6863;&#x5BF9;Stream&#x7684;&#x5B9A;&#x4E49;,</p>
+<blockquote>
+<p>A stream is an abstract interface implemented by various objects in Node. For example a request to an HTTP server is a stream, as is stdout. Streams are readable, writable, or both. All streams are instances of EventEmitter</p>
+</blockquote>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E86;&#x89E3;&#x5230; :</p>
+<ul>
+<li>Stream&#x662F;Node&#x4E2D;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x88AB;&#x5927;&#x91CF;&#x5BF9;&#x8C61;&#x5B9E;&#x73B0;&#xFF0C;&#x5C24;&#x5176;&#x662F;Node&#x4E2D;&#x7684;I/O&#x64CD;&#x4F5C;</li>
+<li>Stream&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x50CF;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x5185;&#x90E8;&#x7684;&#x67D0;&#x4E9B;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;(&#x4F8B;&#x5982;_read&#x3001;_write&#x3001;_transform)</li>
+<li>Stream&#x662F;EventEmitter&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;Stream&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x5185;&#x90E8;&#x4F9D;&#x7136;&#x662F;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;(data)&#x6765;&#x5B9E;&#x73B0;&#x7684;</li>
+</ul>
+<p>&#x90A3;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x9700;&#x8981;&#x6D41;&#x3002;&#x770B;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;http&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;fs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// req is an http.IncomingMessage, which is a Readable Stream</span>
+    <span class="token comment" spellcheck="true">// res is an http.ServerResponse, which is a Writable Stream</span>
+    fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">&apos;/data.txt&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>&#x6BCF;&#x6B21;&#x5F53;&#x8BF7;&#x6C42;&#x8FC7;&#x6765;,&#x7A0B;&#x5E8F;&#x90FD;&#x4F1A;&#x63A5;&#x6536;&#x5230;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;,&#x7136;&#x540E;&#x53BB;&#x8BFB;<code>data.txt</code>&#x6587;&#x4EF6;,&#x5E76;&#x628A;&#x5185;&#x5BB9;&#x8FD4;&#x56DE;&#x3002;&#x4F46;&#x662F;&#x6BCF;&#x6B21;&#x8BFB;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x4F1A;&#x628A;<code>data.txt</code>&#x6574;&#x4E2A;&#x8BFB;&#x5165;&#x5185;&#x5B58;,&#x5728;&#x54CD;&#x5E94;&#x5927;&#x91CF;&#x7528;&#x6237;&#x7684;&#x5E76;&#x53D1;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x53EF;&#x80FD;&#x4F1A;&#x6D88;&#x8017;&#x5927;&#x91CF;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x8FD9;&#x6837;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x7528;&#x6237;&#x8FDE;&#x63A5;&#x7F13;&#x6162;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5176;&#x6B21;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x5F88;&#x4E0D;&#x597D;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#xFF0C;&#x56E0;&#x4E3A;&#x7528;&#x6237;&#x5728;&#x63A5;&#x6536;&#x5230;&#x4EFB;&#x4F55;&#x7684;&#x5185;&#x5BB9;&#x4E4B;&#x524D;&#x9996;&#x5148;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x7A0B;&#x5E8F;&#x5C06;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5B8C;&#x5168;&#x8BFB;&#x5165;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x3002;&#x6240;&#x4EE5;&#x66F4;&#x597D;&#x7684;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x9700;&#x8981;&#x591A;&#x5C11;&#x7ED9;&#x591A;&#x5C11;,&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x80A1;&#x8111;&#x7684;&#x5C06;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x653E;&#x5230;&#x5185;&#x5B58;&#x4E2D;,&#x901A;&#x8FC7;&#x6D41;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+</blockquote>
+<pre class="language-"><code>var http = require(&apos;http&apos;);
+var fs = require(&apos;fs&apos;);
+
+var server = http.createServer(function (req, res) {
+    // req is an http.IncomingMessage, which is a Readable Stream
+    // res is an http.ServerResponse, which is a Writable Stream
+    var stream = fs.createReadStream(__dirname + &apos;/data.txt&apos;);
+    stream.pipe(res);
+});
+server.listen(8000);
+</code></pre><h3 id="node-&#x4E2D;stream&#x7684;&#x7C7B;&#x578B;">Node &#x4E2D;Stream&#x7684;&#x7C7B;&#x578B;</h3>
+<p>&#x5728;Node.js&#x4E2D;,&#x6709;&#x56DB;&#x79CD;&#x57FA;&#x672C;&#x7684;&#x6D41;&#x7C7B;&#x578B;,&#x4ED6;&#x4EEC;&#x5206;&#x522B;&#x662F;:<code>Readable</code> ,<code>Writable</code>,<code>Duplex</code>,<code>Transform</code>&#x3002;&#x6D41;&#x4E00;&#x822C;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90FD;&#x662F;String &#x548C; Buffer&#x7684;,&#x4F46;&#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x521B;&#x5EFA;&#x6D41;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x9009;&#x9879;&#x53C2;&#x6570;<code>objectMode</code>,&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x6D41;,&#x4E0D;&#x8FC7;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;,&#x5C1D;&#x8BD5;&#x5C06;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x6D41;&#x7684;&#x6A21;&#x5F0F;&#x5207;&#x6362;&#x6210;&#x5BF9;&#x8C61;&#x6D41;&#x662F;&#x4E00;&#x79CD;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x4E0D;&#x88AB;&#x5EFA;&#x8BAE;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x4E0D;&#x7BA1;&#x662F;<code>Readable</code> &#x8FD8;&#x662F; <code>Writable</code> &#x6D41;,&#x5DE5;&#x4F5C;&#x7684;&#x8FC7;&#x7A0B;&#x90FD;&#x4F1A;&#x5C06;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x90E8;&#x7684;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x4E2D;,&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x901A;&#x8FC7;<code>readable._readableState.buffer</code> , <code>writable._writableState.getBuffer()</code> &#x53D6;&#x51FA;buffer&#x5185;&#x5BB9;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9009;&#x9879;&#x53C2;&#x6570;<code>highWaterMark</code>&#x63A7;&#x5236;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5927;&#x5C0F;,&#x5BF9;&#x4E8E;String &#x6216;&#x8005; Buffer&#x6D41;&#x6765;&#x8BF4;,highWaterMark &#x63A7;&#x5236;&#x7684;&#x5B57;&#x8282;&#x6570;,&#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;&#x6D41;,highWaterMark&#x63A7;&#x5236;&#x7684;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x4E2A;&#x6570;&#x3002;</p>
+<h4 id="1-readable">1. <code>Readable</code></h4>
+<p>&#x53EF;&#x8BFB;&#x6D41;,&#x662F;&#x8F93;&#x51FA;&#x6D41;,&#x901A;&#x8FC7;<code>readable.push(chunk)</code>&#x5C06;&#x6570;&#x636E;&#x8BFB;&#x5165;&#x6D41;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x4EE5;&#x4F9B;&#x8BFB;&#x53D6;,&#x6D88;&#x8D39;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>readable.read()</code>&#x8BFB;&#x53D6;&#x6D41;&#x4E2D;&#x7684;&#x6570;&#x636E;,&#x5982;&#x679C;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x88AB;&#x6D88;&#x8D39;&#x6389;,&#x4E00;&#x65E6;&#x5230;&#x8FBE; <code>highWaterMark</code> &#x8BBE;&#x7F6E;&#x7684;&#x9608;&#x503C;,&#x90A3;&#x4E48;&#x8F93;&#x51FA;&#x6D41;&#x5C31;&#x4F1A;&#x505C;&#x6B62;&#x5F80;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x653E;&#x6570;&#x636E;,&#x77E5;&#x9053;&#x6709;&#x6D88;&#x8D39;&#x8005;&#x6D88;&#x8017;&#x6389;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x3002;</p>
+<blockquote>
+<p>Once the total size of the internal read buffer reaches the threshold specified by highWaterMark, the stream will temporarily stop reading data from the underlying resource until the data currently buffered can be consumed (that is, the stream will stop calling the internal readable._read() method that is used to fill the read buffer).</p>
+</blockquote>
+<p>Readable &#x6709;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;,&#x5206;&#x522B;&#x662F; flowing &#x548C; paused &#x6A21;&#x5F0F;&#x3002;flowing &#x6A21;&#x5F0F;,&#x4F1A;&#x81EA;&#x52A8;&#x7684;&#x4ECE;&#x6E90;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x7ED9;&#x5E94;&#x7528;&#x6D88;&#x8D39;,&#x800C;paused &#x6A21;&#x5F0F;&#x9700;&#x8981;&#x663E;&#x793A;&#x624B;&#x52A8;&#x8C03;&#x7528;readable.read()&#x65B9;&#x6CD5;,&#x4ECE;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x3002;&#x6240;&#x6709;&#x7684;Readable&#x6D41;&#x4E00;&#x5F00;&#x59CB;&#x90FD;&#x662F;paused&#x6A21;&#x5F0F;,&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#x5207;&#x6362;&#x6210;flowing &#x6A21;&#x5F0F;:</p>
+<blockquote>
+<ol>
+<li>&#x6DFB;&#x52A0;<code>data</code>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x3002;</li>
+<li>&#x8C03;&#x7528; <code>readable.resume()</code> &#x65B9;&#x6CD5;&#x3002; </li>
+<li>&#x8C03;&#x7528; <code>readable.pipe()</code> &#x65B9;&#x6CD5;&#x53D1;&#x9001;&#x6570;&#x636E;&#x5230;Writeable &#x6D41;&#x3002; </li>
+</ol>
+</blockquote>
+<p>&#x53EA;&#x8981;&#x76D1;&#x542C;&#x4E86;<code>data</code>&#x4E8B;&#x4EF6;&#x6216;&#x8005;&#x662F;&#x8C03;&#x7528;<code>readable.resume()</code>,<code>readable.pipe()</code>&#x65B9;&#x6CD5;,&#x90FD;&#x4F1A;&#x5C06;<code>readable._readableState.flowing</code> &#x8BBE;&#x7F6E;&#x4E3A;true&#x3002;&#x4F7F;&#x5F97;Readable&#x5F53;&#x6570;&#x636E;&#x751F;&#x6210;&#x65F6;&#x4E0D;&#x65AD;&#x7684;&#x89E6;&#x53D1;data&#x4E8B;&#x4EF6;&#x3002;&#x6D41;&#x7A0B;&#x56FE;&#x5927;&#x81F4;&#x5982;&#x4E0B;:</p>
+<figure id="fig1.5.1.1"><img src="http://tech.meituan.com/img/stream-how-data-comes-out.png" alt="Readable &#x6D41;&#x7A0B;"><figcaption>Image 1.5.1.1 - Readable &#x6D41;&#x7A0B;</figcaption></figure>
+<p>&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x65B9;&#x5F0F;&#x5C06;&#x6A21;&#x5F0F;&#x4ECE; flowing &#x5207;&#x6362;&#x56DE; paused&#x3002; &#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x3002;</p>
+<h4 id="2-writable">2. <code>Writable</code></h4>
+<p>&#x53EF;&#x5199;&#x6D41;,&#x8F93;&#x5165;&#x6D41;,&#x662F;&#x5BF9;&#x6570;&#x636E;&#x5199;&#x5165;&#x76EE;&#x6807;&#x7684;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;,&#x5C06;&#x5185;&#x5BB9;&#x901A;&#x8FC7;<code>writable.write(chunk)</code>&#x5B58;&#x5165;&#x6D41;&#x7F13;&#x51B2;&#x533A;&#x4E2D;,&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8D85;&#x51FA;&#x9650;&#x5236;,&#x5219;&#x8FD4;&#x56DE;true,&#x5982;&#x679C;&#x8D85;&#x51FA;&#x9650;&#x5236;,&#x5219;&#x8FD4;&#x56DE;false&#x3002;</p>
+<ul>
+<li><p>&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;<code>Writable</code> </p>
+<blockquote>
+<p>&#x7EE7;&#x627F;<code>Writable</code> ,&#x91CD;&#x5199;&#x65B9;&#x6CD5;<code>_write</code>,<code>_writev</code>,&#x4EFB;&#x4F55;&#x7684;&#x53EF;&#x5199;&#x6D41;&#x90FD;&#x5FC5;&#x987B;&#x63D0;&#x4F9B;&#x65B9;&#x6CD5;<code>_write</code>,&#x7528;&#x4E8E;&#x5C06;&#x6570;&#x636E;&#x5199;&#x5165;&#x5E95;&#x5C42;&#x8D44;&#x6E90;(&#x5982;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;)&#x3002;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;<code>Writable</code>&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+</blockquote>
+<pre class="language-"><code class="lang-javascript">  <span class="token comment" spellcheck="true">//&#x5199;&#x6CD5;1: </span>
+  <span class="token keyword">const</span> Writable <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;stream&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Writable<span class="token punctuation">;</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">MyWritable</span> <span class="token keyword">extends</span> <span class="token class-name">Writable</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// Calls the stream.Writable() constructor</span>
+      <span class="token keyword">super</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">//&#x5199;&#x6CD5;2:</span>
+  <span class="token keyword">const</span> Writable <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;stream&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Writable<span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> myWritable <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Writable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function">write</span><span class="token punctuation">(</span>chunk<span class="token punctuation">,</span> encoding<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">writev</span><span class="token punctuation">(</span>chunks<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Writeable &#x4E0E; Readable &#x7684;&#x5173;&#x7CFB;&#x5927;&#x81F4;&#x5982;&#x4E0B;&#x56FE;:</p>
+<figure id="fig1.5.1.2"><img src="https://segmentfault.com/img/bVoLre" alt="Writeable &#x4E0E; Readable &#x7684;&#x5173;&#x7CFB;"><figcaption>Image 1.5.1.2 - Writeable &#x4E0E; Readable &#x7684;&#x5173;&#x7CFB;</figcaption></figure>
+</li>
+</ul>
+<h4 id="3-duplex--transform">3. <code>Duplex</code> &amp; <code>Transform</code></h4>
+<p><code>Duplex</code> &amp; <code>Transform</code> &#x65E2;&#x662F;&#x53EF;&#x8BFB;&#x6D41;&#x4E5F;&#x662F;&#x53EF;&#x5199;&#x6D41;,&#x7C7B;&#x6BD4;&#x6C34;&#x6D41;&#x7BA1;&#x9053;&#x4E2D;&#x95F4;&#x90E8;&#x5206;,&#x65E2;&#x6709;&#x8F93;&#x5165;&#x4E5F;&#x6709;&#x8F93;&#x51FA;,&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x5206;&#x522B;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x3002;&#x7ECF;&#x5E38;&#x4F1A;&#x6709;&#x4E00;&#x79CD;&#x60C5;&#x51B5;,&#x5C31;&#x662F;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x7684;&#x901F;&#x7387;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x60C5;&#x51B5;,&#x6240;&#x4EE5;&#x4E24;&#x7AEF;&#x5E94;&#x8BE5;&#x76F8;&#x5BF9;&#x72EC;&#x7ACB;,&#x53EF;&#x4EE5;&#x4E3A;&#x53E6;&#x4E00;&#x7AEF;&#x8C03;&#x8282;&#x901F;&#x7387;&#x3002;Transform &#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684; Duplex, Transform&#x7684;&#x8F93;&#x51FA;&#x4EE5;&#x67D0;&#x79CD;&#x65B9;&#x5F0F;&#x548C;&#x8F93;&#x5165;&#x76F8;&#x8054;&#x7CFB;&#x3002;Transform &#x5185;&#x90E8;&#x6D41;&#x7A0B;&#x56FE;&#x5927;&#x81F4;&#x5982;&#x4E0B;:</p>
+<figure id="fig1.5.1.3"><img src="https://segmentfault.com/img/bVoLri" alt="Transform &#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x56FE;"><figcaption>Image 1.5.1.3 - Transform &#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x56FE;</figcaption></figure>
+<p>gulp&#x63D2;&#x4EF6;&#x5C31;&#x662F;&#x901A;&#x8FC7;through2&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Transform,&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x521B;&#x5EFA;&#x7684;&#x6D41;&#x3002;</p>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<ol>
+<li><a href="https://github.com/zoubin/streamify-your-node-program" target="_blank">streamify-your-node-program</a></li>
+<li><a href="https://segmentfault.com/a/1190000003479884" target="_blank">node&#x6E90;&#x7801;&#x89E3;&#x6790; -- Stream&#x63A2;&#x7A76;</a></li>
+<li><a href="http://tech.meituan.com/stream-internals.html" target="_blank">Node.js Stream - &#x8FDB;&#x9636;&#x7BC7;</a></li>
+<li><a href="https://nodejs.org/api/stream.html" target="_blank">Node Stream</a></li>
+<li><a href="https://github.com/substack/stream-handbook" target="_blank">stream-handbook</a></li>
+<li><a href="https://github.com/nodejs/node/blob/master/lib/_stream_readable.js" target="_blank">&#x6E90;&#x7801;</a></li>
+</ol>
+<script type="text/javascript">var className='atoc';</script> 
+
+<footer class="page-footer"><span class="copyright">&#xA9; xdimh all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-03-15 16:20:27
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="../mix/" class="navigation navigation-next navigation-unique" aria-label="Next page: 大杂烩">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Node Stream 初窥","level":"1.5.1","depth":2,"next":{"title":"大杂烩","level":"1.6","depth":1,"path":"mix/README.md","ref":"mix/README.md","articles":[{"title":"JavaScript中的正则表达式之正向环视(正向断言)","level":"1.6.1","depth":2,"path":"mix/regular-expression.md","ref":"mix/regular-expression.md","articles":[]},{"title":"base64的编码和解码","level":"1.6.2","depth":2,"path":"mix/base64.md","ref":"mix/base64.md","articles":[]},{"title":"使用ngrok让你的本地mock可以提供给外网访问","level":"1.6.3","depth":2,"path":"mix/ngrok.md","ref":"mix/ngrok.md","articles":[]},{"title":"gulp插件开发","level":"1.6.4","depth":2,"path":"mix/gulp-plugin-develop.md","ref":"mix/gulp-plugin-develop.md","articles":[]},{"title":"Redux 简介","level":"1.6.5","depth":2,"path":"mix/redux-introduction.md","ref":"mix/redux-introduction.md","articles":[]}]},"previous":{"title":"Node 相关","level":"1.5","depth":1,"ref":"","articles":[{"title":"Node Stream 初窥","level":"1.5.1","depth":2,"path":"node/node-stream.md","ref":"node/node-stream.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["duoshuo","editlink","prism","jsfiddle","image-captions","jsbin","atoc","tbfed-pagefooter","search-plus","search","-sharing","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy xdimh","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"editlink":{"label":"编辑此页面","multilingual":false,"base":"https://github.com/xdimh/weekly"},"jsfiddle":{"type":"script","tabs":["result","js","css","html"],"height":"500","width":"500","fontColor":"00FF00"},"atoc":{"addClass":true,"className":"atoc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"duoshuo":{"short_name":"xdimh","theme":"default"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"jsbin":{},"search-plus":{},"image-captions":{"caption":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"xdimh","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"react/react-life-cycle.html#fig1.2.1.1","level":"1.2.1","list_caption":"Figure: react-life-cycle","alt":"react-life-cycle","nro":1,"url":"http://rainypin.qiniudn.com/git_imgs/react-life-cycle.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"react-life-cycle","attributes":{},"skip":false,"key":"1.2.1.1"},{"backlink":"react-native/rn-dev-prepare.html#fig1.3.1.1","level":"1.3.1","list_caption":"Figure: android studio","alt":"android studio","nro":2,"url":"http://rainypin.qiniudn.com/git_imgs/android-studio.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"android studio","attributes":{},"skip":false,"key":"1.3.1.1"},{"backlink":"react-native/rn-dev-prepare.html#fig1.3.1.2","level":"1.3.1","list_caption":"Figure: android sdk","alt":"android sdk","nro":3,"url":"http://rainypin.qiniudn.com/git_imgs/android-sdk.png","index":2,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"android sdk","attributes":{},"skip":false,"key":"1.3.1.2"},{"backlink":"react-native/rn-introduction.html#fig1.3.2.1","level":"1.3.2","list_caption":"Figure: react-life-cycle","alt":"react-life-cycle","nro":4,"url":"http://rainypin.qiniudn.com/git_imgs/react-life-cycle.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"react-life-cycle","attributes":{},"skip":false,"key":"1.3.2.1"},{"backlink":"react-native/rn-introduction.html#fig1.3.2.2","level":"1.3.2","list_caption":"Figure: React Native代码调试","alt":"React Native代码调试","nro":5,"url":"http://rainypin.qiniudn.com/git_imgs/rn_debug.png","index":2,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"React Native代码调试","attributes":{},"skip":false,"key":"1.3.2.2"},{"backlink":"react-native/rn-introduction.html#fig1.3.2.3","level":"1.3.2","list_caption":"Figure: React Native 代码断点调试","alt":"React Native 代码断点调试","nro":6,"url":"http://rainypin.qiniudn.com/git_imgs/rn_debug_breakpoint.png","index":3,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"React Native 代码断点调试","attributes":{},"skip":false,"key":"1.3.2.3"},{"backlink":"react-native/rn-introduction.html#fig1.3.2.4","level":"1.3.2","list_caption":"Figure: Native获取zip包大致逻辑","alt":"Native获取zip包大致逻辑","nro":7,"url":"http://rainypin.qiniudn.com/git_imgs/zip-load-flow.png","index":4,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Native获取zip包大致逻辑","attributes":{},"skip":false,"key":"1.3.2.4"},{"backlink":"node/node-stream.html#fig1.5.1.1","level":"1.5.1","list_caption":"Figure: Readable 流程","alt":"Readable 流程","nro":8,"url":"http://tech.meituan.com/img/stream-how-data-comes-out.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Readable 流程","attributes":{},"skip":false,"key":"1.5.1.1"},{"backlink":"node/node-stream.html#fig1.5.1.2","level":"1.5.1","list_caption":"Figure: Writeable 与 Readable 的关系","alt":"Writeable 与 Readable 的关系","nro":9,"url":"https://segmentfault.com/img/bVoLre","index":2,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Writeable 与 Readable 的关系","attributes":{},"skip":false,"key":"1.5.1.2"},{"backlink":"node/node-stream.html#fig1.5.1.3","level":"1.5.1","list_caption":"Figure: Transform 内部工作流程图","alt":"Transform 内部工作流程图","nro":10,"url":"https://segmentfault.com/img/bVoLri","index":3,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Transform 内部工作流程图","attributes":{},"skip":false,"key":"1.5.1.3"},{"backlink":"mix/redux-introduction.html#fig1.6.5.1","level":"1.6.5","list_caption":"Figure: 没有引入redux之前","alt":"没有引入redux之前","nro":11,"url":"http://rainypin.qiniudn.com/git_imgs/no-redux.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"没有引入redux之前","attributes":{},"skip":false,"key":"1.6.5.1"},{"backlink":"mix/redux-introduction.html#fig1.6.5.2","level":"1.6.5","list_caption":"Figure: 引入Redux之后","alt":"引入Redux之后","nro":12,"url":"http://rainypin.qiniudn.com/git_imgs/with-redux.png","index":2,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"引入Redux之后","attributes":{},"skip":false,"key":"1.6.5.2"}]},"title":"一条道走到黑","language":"zh-hans","gitbook":"*","description":"一条道走到黑"},"file":{"path":"node/node-stream.md","mtime":"2017-03-15T08:20:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-26T14:42:39.306Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-duoshuo/duoshuo.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-jsfiddle/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-jsbin/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
