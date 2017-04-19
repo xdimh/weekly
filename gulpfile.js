@@ -13,7 +13,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const $ = gulpLoadPlugins();
 
 // 推送到github - weekly - gh-pages上
-gulp.task('publish.github',['build'],() => {
+gulp.task('publish.github',() => {
     console.log('Publishing to GH Pages');
 return gulp.src(['./_book/**/*','CNAME'])
     .pipe($.ghPages({
@@ -25,7 +25,7 @@ return gulp.src(['./_book/**/*','CNAME'])
 
 
 // 推送到coding.net weely.coding.me 上
-gulp.task('publish.coding.net',['build'],() => {
+gulp.task('publish.coding.net',() => {
     console.log('Publishing to coding.net Pages');
     return gulp.src(['./_book/**/*'])
         .pipe($.ghPages({

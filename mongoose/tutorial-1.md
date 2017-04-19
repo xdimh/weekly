@@ -67,71 +67,70 @@ Mongoose是在node.js异步环境下对mongodb进行便捷操作的优雅的对�
 ## mongoose Schema & Model
 
 * #### Schema 
-在 mongoose 中,所有事都从 Schema 开始,Schema 是对 mongodb 数据库集合中的文档结构的一种映射,可以是文档的全部或者部分。Schema 不仅定义了文档结构和使用性能，还可以有扩展插件、实例方法、静态方法、复合索引、文档生命周期钩子,Schema可以定义插件，并且插件具有良好的可拔插性,Schema 不具备对数据库进行操作的能力,简单的说 Schema 就是描述集合中数据而存在的。mongoose 中通过如下方法创建Schema。
+  在 mongoose 中,所有事都从 Schema 开始,Schema 是对 mongodb 数据库集合中的文档结构的一种映射,可以是文档的全部或者部分。Schema 不仅定义了文档结构和使用性能，还可以有扩展插件、实例方法、静态方法、复合索引、文档生命周期钩子,Schema可以定义插件，并且插件具有良好的可拔插性,Schema 不具备对数据库进行操作的能力,简单的说 Schema 就是描述集合中数据而存在的。mongoose 中通过如下方法创建Schema。
 
-```javascript
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+    ```javascript
+    var mongoose = require('mongoose');
+    var Schema = mongoose.Schema;
+    
+    var blogSchema = new Schema({
+      title:  String,
+      author: String,
+      body:   String,
+      comments: [{ body: String, date: Date }],
+      date: { type: Date, default: Date.now },
+      hidden: Boolean,
+      meta: {
+        votes: Number,
+        favs:  Number
+      }
+    });
+   ```
 
-var blogSchema = new Schema({
-  title:  String,
-  author: String,
-  body:   String,
-  comments: [{ body: String, date: Date }],
-  date: { type: Date, default: Date.now },
-  hidden: Boolean,
-  meta: {
-    votes: Number,
-    favs:  Number
-  }
-});
-```
-
-定义Schema相当于关系型数据库定义表结构一样。也有对应字段的类型,默认值,最大最小值等。更多类型内容参考[SchemaTypes](http://mongoosejs.com/docs/schematypes.html)
+  定义Schema相当于关系型数据库定义表结构一样。也有对应字段的类型,默认值,最大最小值等。更多类型内容参考[SchemaTypes](http://mongoosejs.com/docs/schematypes.html)
 
 * #### Model
 
-Model 由Schema创建具有抽象属性和行为的数据库操作对象。模型的实例代表着文档,可以保存或者从数据库中取出。读到这大家可能会有一个疑惑,Model怎么和mongodb中的collection名称对应起来呢,例如你通过``mongoose.model('User',new Schema({ name: String }))``,创建一个model对象,那么这个对象对应的是数据库中哪个collection呢,很多人可能会猜是 user, 但是实际上却是 users,``mongoose.model``规定,当你在创建 Model 对象的时候没有提供collection 参数,那么他就会将 Model 的名称小写并复数化作为 mongodb 数据库中对应的 collection 的名称。参考[Mongoose#model](http://mongoosejs.com/docs/api.html#utils_exports.toCollectionName)
+  Model 由Schema创建具有抽象属性和行为的数据库操作对象。模型的实例代表着文档,可以保存或者从数据库中取出。读到这大家可能会有一个疑惑,Model怎么和mongodb中的collection名称对应起来呢,例如你通过``mongoose.model('User',new Schema({ name: String }))``,创建一个model对象,那么这个对象对应的是数据库中哪个collection呢,很多人可能会猜是 user, 但是实际上却是 users,``mongoose.model``规定,当你在创建 Model 对象的时候没有提供collection 参数,那么他就会将 Model 的名称小写并复数化作为 mongodb 数据库中对应的 collection 的名称。参考[Mongoose#model](http://mongoosejs.com/docs/api.html#utils_exports.toCollectionName)
 
-> When no collection argument is passed, Mongoose produces a collection name by passing the model name to the utils.toCollectionName method. This method pluralizes the name. If you don't like this behavior, either pass a collection name or set your schemas collection name option.
+  > When no collection argument is passed, Mongoose produces a collection name by passing the model name to the utils.toCollectionName method. This method pluralizes the name. If you don't like this behavior, either pass a collection name or set your schemas collection name option.
 
-可以通过如下方式自定义 collection 名称
+  可以通过如下方式自定义 collection 名称
 
-```javascript
-//方式一: 通过创建schema的时候定义
-var schema = new Schema({ name: String }, { collection: 'actor' });
+  ```javascript
+    //方式一: 通过创建schema的时候定义
+    var schema = new Schema({ name: String }, { collection: 'actor' });
+    
+    // or
+    //方式一: 通过创建schema的set方法进行定义
+    schema.set('collection', 'actor');
+    
+    // or
+    //方式三: 通过在创建Model对象时指定第三个参数定义
+    var collectionName = 'actor'
+    var M = mongoose.model('Actor', schema, collectionName)
+   ```
 
-// or
-//方式一: 通过创建schema的set方法进行定义
-schema.set('collection', 'actor');
+  创建完Model对象后,就可以通过他进行数据库操作了,如保存一个文档(为Model对象的实例),如下:
 
-// or
-//方式三: 通过在创建Model对象时指定第三个参数定义
-var collectionName = 'actor'
-var M = mongoose.model('Actor', schema, collectionName)
-```
+    ```javascript
+    var schema = new mongoose.Schema({ name: 'string', size: 'string' });
+    var Tank = mongoose.model('Tank', schema);
+    var small = new Tank({ size: 'small' });
+    small.save(function (err) {
+      if (err) return handleError(err);
+      // saved!
+    })
+    
+    // or
+    
+    Tank.create({ size: 'small' }, function (err, small) {
+      if (err) return handleError(err);
+      // saved!
+    })
+    ```
 
-
-创建完Model对象后,就可以通过他进行数据库操作了,如保存一个文档(为Model对象的实例),如下:
-
-```javascript
-var schema = new mongoose.Schema({ name: 'string', size: 'string' });
-var Tank = mongoose.model('Tank', schema);
-var small = new Tank({ size: 'small' });
-small.save(function (err) {
-  if (err) return handleError(err);
-  // saved!
-})
-
-// or
-
-Tank.create({ size: 'small' }, function (err, small) {
-  if (err) return handleError(err);
-  // saved!
-})
-```
-
-更多关于Model的内容参考[Models](http://mongoosejs.com/docs/models.html)
+    更多关于Model的内容参考[Models](http://mongoosejs.com/docs/models.html)
 
 
 
