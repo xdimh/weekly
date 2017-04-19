@@ -7,6 +7,7 @@
 'use strict';
 const gulp = require('gulp');
 const shell = require('shelljs');
+const yargs = require('yargs');
 const gulpLoadPlugins = require('gulp-load-plugins');
 
 const $ = gulpLoadPlugins();
@@ -35,6 +36,7 @@ gulp.task('publish.coding.net',['build'],() => {
         }));
 });
 
+//build gitbook 为静态html
 gulp.task('build',(cb) => {
     shell.exec('gitbook build', function(code, stdout, stderr) {
         if (code == 0) {
@@ -43,6 +45,28 @@ gulp.task('build',(cb) => {
            throw new Error('gitbook build 失败!');
         }
     });
+});
+
+gulp.task('push-master',()=>{
+    let argv = yargs.usage('Usage: gulp push-master [options]')
+        .example('gulp push-master -m message')
+        .options({
+            m: {
+                alias: 'msg',
+                demand: true,
+                describe: 'commit message',
+                type: 'string'
+            }
+        })
+        .help('h')
+        .alias('h', 'help')
+        .epilog('copyright 2017')
+        .argv;
+    return gulp.src([__dirname + '/**','!' + __dirname + '/_book/**','!' + __dirname + '/*publish*/**','!node_modules/**'])
+        .pipe($.ghPages({
+            branch: 'master',
+            message : argv.m
+        }));
 });
 
 gulp.task('publish',['publish.coding.net','publish.github']);

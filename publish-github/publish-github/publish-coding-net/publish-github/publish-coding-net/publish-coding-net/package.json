@@ -14,6 +14,7 @@
     "gitbook-plugin-editlink": "^1.0.2"
   },
   "devDependencies": {
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-load-plugins": "^1.5.0"

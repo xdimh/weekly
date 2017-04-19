@@ -1,0 +1,754 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redux 简介 · 一条道走到黑</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="xdimh">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-atoc/atoc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="gulp-plugin-develop.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    React 开发汇总
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../react/react-life-cycle.html">
+            
+                <a href="../react/react-life-cycle.html">
+            
+                    
+                    React 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    React Native 开发汇总 
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../react-native/rn-dev-prepare.html">
+            
+                <a href="../react-native/rn-dev-prepare.html">
+            
+                    
+                    Mac上搭建RN开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../react-native/rn-introduction.html">
+            
+                <a href="../react-native/rn-introduction.html">
+            
+                    
+                    用JavaScript来写客户端 — React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Electron 开发汇总
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Node 相关
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../node/node-stream.html">
+            
+                <a href="../node/node-stream.html">
+            
+                    
+                    Node Stream 初窥
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    大杂烩
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="regular-expression.html">
+            
+                <a href="regular-expression.html">
+            
+                    
+                    JavaScript中的正则表达式之正向环视(正向断言)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="base64.html">
+            
+                <a href="base64.html">
+            
+                    
+                    base64的编码和解码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="ngrok.html">
+            
+                <a href="ngrok.html">
+            
+                    
+                    使用ngrok让你的本地mock可以提供给外网访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="gulp-plugin-develop.html">
+            
+                <a href="gulp-plugin-develop.html">
+            
+                    
+                    gulp插件开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.5" data-path="redux-introduction.html">
+            
+                <a href="redux-introduction.html">
+            
+                    
+                    Redux 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    源码阅读
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../source-code-read/gulp-prefix.html">
+            
+                <a href="../source-code-read/gulp-prefix.html">
+            
+                    
+                    gulp-prefix插件源码阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Redux 简介</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="redux-&#x7B80;&#x4ECB;">Redux &#x7B80;&#x4ECB;</h2>
+<p>&#x3000;&#x3000;&#x4E00;&#x4E2A;&#x5355;&#x9875;&#x5E94;&#x7528;,&#x6700;&#x91CD;&#x8981;&#x7684;&#x5728;&#x4E8E;&#x5E94;&#x7528;&#x7684;&#x6570;&#x636E;&#x7BA1;&#x7406;,&#x72B6;&#x6001;&#x7EF4;&#x62A4;,&#x8FD8;&#x6709;&#x9875;&#x9762;&#x7684;&#x8DEF;&#x7531;&#x7BA1;&#x7406;&#x3002;Redux&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;JavaScript&#x5E94;&#x7528;&#x7684;&#x53EF;&#x9884;&#x6D4B;&#x72B6;&#x6001;&#x5BB9;&#x5668;,&#x4E0D;&#x4EC5;&#x4EC5;&#x7ED9;&#x4F60;&#x5F88;&#x723D;&#x7684;&#x7F16;&#x7A0B;&#x4F53;&#x9A8C;,&#x800C;&#x4E14;&#x8BA9;&#x4F60;&#x5199;&#x7684;&#x5E94;&#x7528;&#x5728;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x4E0A;&#x6709;&#x5F88;&#x597D;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x3002;</p>
+<p>&#x3000;&#x3000;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;,&#x5728;&#x4E24;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#x7528;&#x5230;&#x4E86;Redux,&#x4E00;&#x6B21;&#x662F;&#x7ED3;&#x5408;react&#x6846;&#x67B6;,&#x4E00;&#x6B21;&#x662F;&#x7ED3;&#x5408;&#x7F51;&#x6613;&#x7684;regular&#x6846;&#x67B6;&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x7CFB;&#x7EDF;,&#x5728;&#x5F00;&#x53D1;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x5F80;&#x5F80;&#x4F1A;&#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x7684;&#x5212;&#x5206;,&#x4ECE;&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x5230;&#x5E95;&#x5C42;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;,&#x4ECE;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x5230;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x3002;&#x5728;&#x6CA1;&#x6709;&#x5F15;&#x8FDB;Redux&#x4E4B;&#x524D;,&#x6211;&#x4EEC;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x53BB;&#x7EF4;&#x62A4;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x72B6;&#x6001;&#x7684;&#x7BA1;&#x7406;,&#x72B6;&#x6001;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x3002;&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x4F1A;&#x5C06;&#x5B50;&#x7EC4;&#x4EF6;&#x72B6;&#x6001;&#x7684;&#x53D8;&#x66F4;&#x901A;&#x8FC7;emit&#x4E8B;&#x4EF6;&#x5230;&#x4E0A;&#x5C42;&#x7EC4;&#x4EF6;,&#x7136;&#x540E;&#x518D;&#x7531;&#x4E0A;&#x5C42;&#x7EC4;&#x4EF6;emit&#x4E8B;&#x4EF6;&#x544A;&#x77E5;&#x9876;&#x5C42;&#x6839;&#x7EC4;&#x4EF6;,&#x7136;&#x540E;&#x9876;&#x5C42;&#x6839;&#x7EC4;&#x4EF6;&#x63A5;&#x6536;&#x5230;&#x4E8B;&#x4EF6;&#x548C;&#x6570;&#x636E;,&#x53D8;&#x66F4;&#x72B6;&#x6001;,&#x7136;&#x540E;&#x5C06;&#x65B0;&#x7684;&#x72B6;&#x6001;&#x6570;&#x636E;&#x4E00;&#x5C42;&#x4E00;&#x5C42;&#x7684;&#x4E0B;&#x53D1;&#x4E0B;&#x53BB;&#x3002;&#x5982;&#x4E0B;&#x56FE;:</p>
+<figure id="fig1.6.5.1"><img src="http://rainypin.qiniudn.com/git_imgs/no-redux.png" alt="&#x6CA1;&#x6709;&#x5F15;&#x5165;redux&#x4E4B;&#x524D;"><figcaption>Image 1.6.5.1 - &#x6CA1;&#x6709;&#x5F15;&#x5165;redux&#x4E4B;&#x524D;</figcaption></figure>
+<p>&#x8FD9;&#x6837;&#x4F1A;&#x9020;&#x6210;&#x9876;&#x5C42;&#x66F4;&#x7EC4;&#x4EF6;&#x903B;&#x8F91;&#x968F;&#x7740;&#x5E94;&#x7528;&#x7CFB;&#x7EDF;&#x7684;&#x9010;&#x6E10;&#x590D;&#x6742;&#x53D8;&#x6210;&#x8D8A;&#x6765;&#x8D8A;&#x5E9E;&#x5927;,&#x5373;&#x4F7F;&#x5BF9;&#x9876;&#x5C42;&#x903B;&#x8F91;&#x8FDB;&#x884C;&#x62C6;&#x5206;,&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x72B6;&#x6001;State&#x7684;&#x7BA1;&#x7406;&#x4E5F;&#x4E0D;&#x4F1A;&#x5F88;&#x8F7B;&#x677E;,&#x4E14;&#x7EC4;&#x4EF6;&#x76F4;&#x63A5;&#x7684;&#x901A;&#x4FE1;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x544A;&#x77E5;&#x5171;&#x540C;&#x7684;&#x7236;&#x7EC4;&#x4EF6;&#x624D;&#x80FD;&#x8FDB;&#x884C;,&#x968F;&#x7740;&#x7CFB;&#x7EDF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x63D0;&#x9AD8;,&#x5C06;&#x4F1A;&#x5BFC;&#x81F4;&#x4EE3;&#x7801;&#x53D8;&#x5F97;&#x6742;&#x4E71;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#x548C;&#x6269;&#x5C55;&#x3002;&#x6240;&#x4EE5;Redux&#x6070;&#x5230;&#x597D;&#x5904;&#x7684;&#x51FA;&#x73B0;,&#x4F5C;&#x4E3A;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x72B6;&#x6001;State&#x7684;&#x7BA1;&#x5BB6;,&#x4F7F;&#x5F97;&#x4F60;&#x53EF;&#x4EE5;&#x4E13;&#x5FC3;&#x7684;&#x53BB;&#x5173;&#x6CE8;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4EE3;&#x7801;,&#x7701;&#x53BB;&#x4E86;&#x5F88;&#x591A;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x4E0A;&#x8017;&#x8D39;&#x7684;&#x7CBE;&#x529B;,&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x4E5F;&#x53D8;&#x5F97;&#x66F4;&#x6E05;&#x6670;&#x66F4;&#x5BB9;&#x6613;&#x6269;&#x5C55;&#x548C;&#x7EF4;&#x62A4;&#x3002;&#x5F15;&#x5165;Redux&#x4E4B;&#x540E;&#x7684;&#x7EC4;&#x4EF6;&#x5173;&#x7CFB;&#x56FE;&#x5982;&#x4E0B;:</p>
+<figure id="fig1.6.5.2"><img src="http://rainypin.qiniudn.com/git_imgs/with-redux.png" alt="&#x5F15;&#x5165;Redux&#x4E4B;&#x540E;"><figcaption>Image 1.6.5.2 - &#x5F15;&#x5165;Redux&#x4E4B;&#x540E;</figcaption></figure>
+<p>&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x72B6;&#x6001;&#x53D8;&#x66F4;&#x6216;&#x8005;&#x4E0E;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x4EA4;&#x4E92;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x4E00;&#x5C42;&#x4E00;&#x5C42;&#x7684;&#x5F80;&#x4E0A;&#x629B;&#x51FA;&#x4E8B;&#x4EF6;,&#x7136;&#x540E;&#x7531;&#x4E0A;&#x5C42;&#x7EC4;&#x4EF6;&#x53BB;&#x7BA1;&#x7406;&#x4E86;,&#x800C;&#x662F;&#x901A;&#x8FC7;Redux,&#x901A;&#x8FC7;dispatch&#x4E00;&#x4E2A;action&#x7ED9;Redux,&#x7136;&#x540E;Redux&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;,&#x544A;&#x77E5;&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x6709;&#x90E8;&#x5206;&#x72B6;&#x6001;&#x5DF2;&#x7ECF;&#x53D1;&#x751F;&#x53D8;&#x5316;,&#x7136;&#x540E;&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x544A;&#x77E5;&#x76F8;&#x5E94;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x53D8;&#x66F4;,&#x6E32;&#x67D3;&#x9875;&#x9762;&#x3002;&#x8FD9;&#x6837;,&#x4F60;&#x7684;&#x72B6;&#x6001;&#x5904;&#x7406;&#x7684;&#x903B;&#x8F91;&#x4E0D;&#x518D;&#x7EF4;&#x62A4;&#x5728;&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x91CC;,&#x800C;&#x4E14;Redux&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x770B;&#x5230;action&#x5904;&#x7406;&#x524D;&#x7684;&#x72B6;&#x6001;&#x548C;action&#x5904;&#x7406;&#x540E;&#x7684;&#x72B6;&#x6001;,&#x4E00;&#x65E6;&#x903B;&#x8F91;&#x51FA;&#x73B0;&#x95EE;&#x9898;,&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x7684;&#x8FDB;&#x884C;&#x5B9A;&#x4F4D;&#x3002;&#x540C;&#x65F6;&#x7EC4;&#x4EF6;&#x7684;&#x4EA4;&#x4E92;&#x4E0D;&#x518D;&#x662F;&#x6742;&#x4E71;&#x65E0;&#x7AE0;&#x7684;,&#x800C;&#x662F;&#x901A;&#x8FC7;Redux,&#x518D;&#x7531;&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x4E0B;&#x53D1;&#x6570;&#x636E;&#x53D8;&#x66F4;,&#x4F7F;&#x5F97;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#x53D8;&#x5F97;&#x66F4;&#x5355;&#x4E00;&#x66F4;&#x6E05;&#x6670;&#x3002;</p>
+<h3 id="&#x90A3;&#x4E48;redux&#x5185;&#x90E8;&#x7528;&#x4E86;&#x4EC0;&#x4E48;&#x9ED1;&#x79D1;&#x6280;">&#x90A3;&#x4E48;Redux&#x5185;&#x90E8;&#x7528;&#x4E86;&#x4EC0;&#x4E48;&#x9ED1;&#x79D1;&#x6280;?</h3>
+<p>&#x3000;&#x3000;Redux&#x672C;&#x8EAB;&#x5F88;&#x7B80;&#x5355;,&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#x7CFB;&#x7EDF;&#x7684;&#x6574;&#x4E2A;&#x72B6;&#x6001;&#x4E00;&#x822C;&#x4F1A;&#x8868;&#x793A;&#x6210;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;,&#x5BF9;&#x8C61;&#x4E2D;&#x5B58;&#x653E;&#x4E86;&#x5E94;&#x7528;&#x7CFB;&#x7EDF;&#x7684;&#x5404;&#x4E2A;&#x72B6;&#x6001;,&#x800C;Redux&#x5C31;&#x66FF;&#x6211;&#x4EEC;&#x63A5;&#x7BA1;&#x4E86;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;,&#x7BA1;&#x7406;&#x7740;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x66F4;&#x3002;&#x5728;Redux&#x4E2D;,&#x6211;&#x4EEC;&#x53EA;&#x80FD;&#x901A;&#x8FC7;dispatch action&#x6765;&#x53D8;&#x66F4;&#x8FD9;&#x4E2A;State&#x5BF9;&#x8C61;,&#x7136;&#x540E;Redux&#x4F1A;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x53EB;Reducer&#x7684;&#x51FD;&#x6570;&#x53BB;&#x5904;&#x7406;&#x8FD9;&#x4E2A;action,&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;,&#x5F53;&#x524D;State&#x5BF9;&#x8C61;,&#x548C;action&#x5BF9;&#x8C61;,&#x7136;&#x540E;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#x8FD4;&#x56DE;&#x65B0;&#x7684;State&#x3002;Redux&#x518D;&#x628A;State&#x7684;&#x53D8;&#x66F4;&#x544A;&#x8BC9;&#x6574;&#x4E2A;&#x5E94;&#x7528;,&#x6B64;&#x65F6;&#x5E94;&#x7528;&#x518D;&#x53BB;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x53D8;&#x66F4;&#x7684;&#x6E32;&#x67D3;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x91CC;&#x63D0;&#x5230;&#x7684;action,Reducer&#x662F;&#x4EC0;&#x4E48;? action &#x548C; Reducer&#x53C8;&#x662F;&#x600E;&#x6837;&#x5BF9;&#x5E94;&#x8D77;&#x6765;&#x7684;? Redux&#x53C8;&#x662F;&#x600E;&#x4E48;&#x6837;&#x5C06;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x6570;&#x636E;&#x53D8;&#x66F4;&#x544A;&#x77E5;&#x5E94;&#x7528;&#x7684;?</p>
+<ol>
+<li><p>&#x9ED1;&#x79D1;&#x6280;&#x4E4B;action</p>
+<p> Redux&#x7684;&#x4E09;&#x5927;&#x539F;&#x5219;&#x5176;&#x4E2D;&#x4E4B;&#x4E00;&#x5C31;&#x662F;:&#x552F;&#x4E00;&#x6539;&#x53D8;State&#x7684;&#x65B9;&#x5F0F;&#x662F;dispatch action&#x3002;&#x4EC0;&#x4E48;&#x662F;action,action&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5BF9;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x60C5;&#x7684;&#x4E00;&#x4E2A;&#x63CF;&#x8FF0;&#x5BF9;&#x8C61;&#x3002;&#x6BD4;&#x5982;&#x4E00;&#x6B21;&#x7528;&#x6237;&#x6309;&#x94AE;&#x70B9;&#x51FB;,&#x4E00;&#x6B21;ajax&#x8BF7;&#x6C42;,&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x7684;&#x8FD4;&#x56DE;&#x7B49;&#x7B49;&#x8FD9;&#x4E9B;&#x5728;Redux&#x4E2D;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x5BF9;&#x5E94;&#x7684;action&#x53BB;&#x63CF;&#x8FF0;&#x4ED6;&#x4EEC;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x4E00;&#x4E2A;key&#x4E3A;type&#x7684;&#x5B57;&#x6BB5;,&#x503C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;,&#x4EE3;&#x8868;&#x8FD9;&#x4E2A;action&#x7684;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x662F;&#x7528;&#x4E8E;&#x540E;&#x9762;Reducer&#x5904;&#x7406;&#x7684;&#x65F6;&#x5019;&#x533A;&#x5206;action&#x7684;&#x5173;&#x952E;&#x5B57;&#x6BB5;&#x3002;&#x6BD4;&#x5982;&#x8FD9;&#x91CC;&#x7684;&#x6309;&#x94AE;&#x70B9;&#x51FB;,&#x6211;&#x4EEC;&#x7684;action&#x7684;type&#x503C;&#x53EF;&#x4EE5;&#x662F;<code>XXX_BUTTON_CLICK</code>&#x3002;&#x56E0;&#x4E3A;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;,&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x7528;&#x5927;&#x5199;&#x8FDB;&#x884C;&#x533A;&#x5206;&#x3002;&#x9664;&#x4E86;type&#x5B57;&#x6BB5;&#x4E4B;&#x5916;,&#x4F60;&#x8FD8;&#x60F3;&#x5728;action&#x4E2D;&#x6DFB;&#x52A0;&#x4EC0;&#x4E48;&#x5B57;&#x6BB5;&#x5B8C;&#x5168;&#x53D6;&#x51B3;&#x4F60;&#x81EA;&#x5DF1;,&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x6211;&#x4EEC;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x5E26;&#x4E0A;&#x9700;&#x8981;&#x4F20;&#x7ED9;Reducer&#x7684;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x3002;&#x6240;&#x4EE5;&#x5B8C;&#x6574;&#x7684;action&#x53EF;&#x80FD;&#x4F1A;&#x50CF;&#x4E0B;&#x9762;&#x4E00;&#x6837;:</p>
+<pre class="language-"><code class="lang-javascript">   <span class="token comment" spellcheck="true">//action &#x793A;&#x4F8B;</span>
+   <span class="token punctuation">{</span>
+       type <span class="token punctuation">:</span> <span class="token string">&quot;XXX_BUTTON_CLICK&quot;</span><span class="token punctuation">,</span>
+       payload <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          data1 <span class="token punctuation">:</span> <span class="token string">&quot;data1&quot;</span>
+          <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>&#x9ED1;&#x79D1;&#x6280;&#x4E4B;action creator </p>
+<p>&#x987E;&#x540D;&#x601D;&#x4E49;,action creator&#x5373;&#x90A3;&#x4E9B;&#x4EC5;&#x4EC5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x5E76;&#x8FD4;&#x56DE;action&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x5F88;&#x7B80;&#x5355;,&#x53EA;&#x505A;&#x4E00;&#x4EF6;&#x4E8B;&#x60C5;,&#x6240;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x6D4B;&#x8BD5;&#x3002;&#x5982;&#x4E0A;action,&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;action creator&#x6765;&#x751F;&#x6210;&#x5E76;&#x8FD4;&#x56DE;&#x4E0A;&#x9762;&#x7684;<code>XXX_BUTTON_CLICK</code> action,&#x5982;&#x4E0B;:</p>
+<pre class="language-"><code class="lang-javascript"> <span class="token keyword">function</span> <span class="token function">xxxButtonClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        type <span class="token punctuation">:</span> <span class="token string">&apos;XXX_BUTTON_CLICK&apos;</span><span class="token punctuation">,</span>
+        payload <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;data1&quot;</span> <span class="token punctuation">:</span> <span class="token string">&quot;data1&quot;</span><span class="token punctuation">,</span>
+             <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>&#x9ED1;&#x79D1;&#x6280;&#x4E4B;Reducer</p>
+<p>&#x524D;&#x9762;&#x7684;action&#x5B9A;&#x4E49;&#x5E76;&#x63CF;&#x8FF0;&#x4E86;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x4EF6;,&#x4F46;&#x662F;&#x5E76;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;,&#x90A3;&#x4E48;&#x8FD9;&#x91CC;&#x7684;Reducer&#x5C31;&#x662F;&#x7528;&#x6765;&#x5904;&#x7406;action&#x6240;&#x63CF;&#x8FF0;&#x7684;&#x4E8B;&#x4EF6;&#x7684;&#x51FD;&#x6570;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;,&#x5206;&#x522B;&#x662F;previous state &#x548C; action&#x3002;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x65B0;&#x7684;state&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x79F0;&#x4E3A;Reducer,&#x4E3B;&#x8981;&#x662F;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x6570;&#x7EC4;&#x539F;&#x578B;&#x4E2D;&#x7684;reduce&#x65B9;&#x6CD5;&#x5F88;&#x50CF;,<code>Array.prototype.reduce()</code>&#x3002;&#x5728;&#x5E94;&#x7528;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;,Redux&#x5728;&#x6CA1;&#x6709;&#x521D;&#x59CB;state&#x7684;&#x65F6;&#x5019;,&#x5C31;&#x4F1A;&#x7ED9;state&#x8D4B;&#x503C;undefined,&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;,&#x6240;&#x4EE5;&#x5728;Reducer&#x7684;&#x65F6;&#x5019;&#x5E94;&#x8BE5;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;&#x3002;&#x5982;&#x4E0B;:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">xxxButtonClickReducer</span><span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span>action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// todo something</span>
+    <span class="token keyword">return</span> newState<span class="token punctuation">;</span>   
+ <span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5728;&#x5B9E;&#x8DF5;&#x8FC7;&#x7A0B;&#x4E2D;,&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;State&#x4F1A;&#x53D8;&#x5F97;&#x6BD4;&#x8F83;&#x5927;,&#x800C;&#x6BCF;&#x4E00;&#x4E2A;Reducer&#x9700;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x72B6;&#x6001;&#x5E76;&#x4E0D;&#x662F;&#x5168;&#x90E8;&#x7684;State,&#x53EF;&#x80FD;&#x662F;&#x5176;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x6570;&#x636E;,&#x6240;&#x4EE5;&#x5982;&#x679C;&#x6BCF;&#x6B21;&#x90FD;&#x5C06;&#x5168;&#x90E8;State&#x4F20;&#x7ED9;&#x53EA;&#x5173;&#x6CE8;&#x90E8;&#x5206;&#x72B6;&#x6001;&#x6570;&#x636E;&#x7684;Reducer,&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x8FD9;&#x4E2A;Reducer&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#x53D8;&#x5F97;&#x590D;&#x6742;,&#x4F60;&#x4E0D;&#x5F97;&#x4E0D;&#x5728;&#x8FD9;&#x4E2A;Reducer&#x4E2D;&#x901A;&#x8FC7;action&#x7684;type&#x6765;&#x5904;&#x7406;&#x7279;&#x5B9A;&#x7684;&#x6570;&#x636E;,&#x8FD9;&#x6837;&#x5C31;&#x5BFC;&#x81F4;<code>switch case</code>&#x53D8;&#x5F97;&#x5197;&#x957F;&#x3002;&#x6240;&#x4EE5;Redux&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x62C6;&#x5206;Reducer&#x7684;&#x65B9;&#x5F0F;,&#x8BA9;&#x67D0;&#x4E2A;Reducer&#x53EA;&#x5173;&#x6CE8;&#x4ED6;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x72B6;&#x6001;&#x6570;&#x636E;&#x3002;&#x6700;&#x540E;&#x5728;&#x901A;&#x8FC7;Redux&#x7684; combineReducers,&#x5C06;&#x591A;&#x4E2A;&#x62C6;&#x5206;&#x7684;Reducers&#x5408;&#x6210;&#x4E00;&#x4E2A;rootReducer,&#x8FD9;&#x4E2A;rootReducer&#x4F1A;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x5168;&#x90E8;&#x7684;state&#x72B6;&#x6001;&#x6570;&#x636E;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre class="language-"><code class="lang-javascript">   <span class="token keyword">function</span> <span class="token function">visibilityFilter</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token string">&apos;SHOW_ALL&apos;</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">case</span> <span class="token string">&apos;SET_VISIBILITY_FILTER&apos;</span><span class="token punctuation">:</span>
+         <span class="token keyword">return</span> action<span class="token punctuation">.</span>filter
+       <span class="token keyword">default</span><span class="token punctuation">:</span>
+         <span class="token keyword">return</span> state
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">function</span> <span class="token function">todos</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">case</span> <span class="token string">&apos;ADD_TODO&apos;</span><span class="token punctuation">:</span>
+         <span class="token keyword">return</span> <span class="token punctuation">[</span>
+           <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>state<span class="token punctuation">,</span>
+           <span class="token punctuation">{</span>
+             text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+             completed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+           <span class="token punctuation">}</span>
+         <span class="token punctuation">]</span>
+       <span class="token keyword">case</span> <span class="token string">&apos;COMPLETE_TODO&apos;</span><span class="token punctuation">:</span>
+         <span class="token keyword">return</span> state<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+           <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">===</span> action<span class="token punctuation">.</span>index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> todo<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+               completed<span class="token punctuation">:</span> <span class="token boolean">true</span>
+             <span class="token punctuation">}</span><span class="token punctuation">)</span>
+           <span class="token punctuation">}</span>
+           <span class="token keyword">return</span> todo
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+       <span class="token keyword">default</span><span class="token punctuation">:</span>
+         <span class="token keyword">return</span> state
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">import</span> <span class="token punctuation">{</span> combineReducers<span class="token punctuation">,</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+   <span class="token keyword">let</span> reducer <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span> visibilityFilter<span class="token punctuation">,</span> todos <span class="token punctuation">}</span><span class="token punctuation">)</span>
+   <span class="token keyword">let</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>reducer<span class="token punctuation">)</span>
+</code></pre>
+<p> &#x5728;&#x4E86;&#x89E3;action &#x548C; &#x5904;&#x7406;action&#x7684;Reducer&#x4E4B;&#x540E;,&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E0B;Redux&#x662F;&#x600E;&#x4E48;&#x5C06;&#x8FD9;&#x4E24;&#x8005;&#x7ED3;&#x5408;&#x8D77;&#x6765;&#x7684;&#x3002;</p>
+</li>
+<li><p>&#x9ED1;&#x79D1;&#x6280;&#x4E4B;Store</p>
+<p>Redux&#x7684;&#x4E09;&#x5927;&#x539F;&#x5219;&#x4E4B;&#x4E00;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x539F;&#x5219;&#x8BF4;&#x7684;&#x5C31;&#x662F;:&#x5355;&#x4E00;&#x6570;&#x636E;&#x6E90;&#x539F;&#x5219;,&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x6570;&#x636E;&#x72B6;&#x6001;&#x5C06;&#x88AB;Redux&#x7684;&#x4E00;&#x4E2A;Store&#x7EF4;&#x62A4;&#x7740;&#x3002;Store&#x4E3B;&#x8981;&#x6709;&#x4EE5;&#x4E0B;&#x529F;&#x80FD;:</p>
+<ul>
+<li>&#x7BA1;&#x7406;&#x7740;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x72B6;&#x6001;</li>
+<li>&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x901A;&#x8FC7;<code>getState()</code>&#x6765;&#x8BBF;&#x95EE;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x72B6;&#x6001;</li>
+<li>&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x901A;&#x8FC7;<code>dispatch(action)</code>&#x6765;&#x66F4;&#x65B0;&#x5E94;&#x7528;&#x7684;&#x72B6;&#x6001;&#x3002;</li>
+<li>&#x6CE8;&#x518C;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x53D8;&#x66F4;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x51FD;&#x6570;<code>subscribe(listener)</code>&#x3002;</li>
+<li><p>&#x89E3;&#x7ED1;&#x72B6;&#x6001;&#x53D8;&#x66F4;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x51FD;&#x6570;,&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>subscribe(listener)</code>&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x8C03;&#x7528;Redux&#x63D0;&#x4F9B;&#x7684;<code>createStore</code>&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>store</code> &#x5BF9;&#x8C61;,&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;<code>rootReducer</code>,&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;<code>initialState</code>&#x3002;<code>store</code> &#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E86;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;,&#x5206;&#x522B;&#x662F;<code>dispatch</code>,<code>subscribe</code>,&#x7528;&#x6765;&#x8BA9;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x5C06; <code>action</code> &#x548C; <code>Reducer</code> &#x5173;&#x8054;&#x5728;&#x4E00;&#x8D77;,&#x5C06;&#x6574;&#x4E2A; <code>store</code> &#x7EF4;&#x62A4;&#x7684; <code>state</code> &#x7684;&#x53D8;&#x66F4;&#x544A;&#x77E5;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x5E94;&#x7528;&#x3002;&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>store.dispatch(action)</code>&#x53EF;&#x4EE5;&#x8BA9;&#x5BF9;&#x5E94;&#x7684; <code>Reducer</code> &#x8FDB;&#x884C;&#x5904;&#x7406;,&#x4ECE;&#x800C;&#x54CD;&#x5E94;action&#x63CF;&#x8FF0;&#x7684;&#x4E8B;&#x4EF6;,&#x5B8C;&#x6210;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x7684;&#x53D8;&#x66F4;&#x3002;&#x518D;&#x901A;&#x8FC7;<code>store.subscribe(fn)</code>&#x5728;fn&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#x901A;&#x8FC7;<code>store.getState()</code>&#x83B7;&#x53D6;&#x5230;&#x53D8;&#x66F4;&#x540E;&#x7684;&#x5E94;&#x7528;&#x72B6;&#x6001;<code>state</code>,&#x7136;&#x540E;&#x4ECE;&#x5E94;&#x7528;&#x7684;&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x4E0B;&#x53D1;&#x5230;&#x5E95;&#x5C42;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x66F4;&#x65B0;&#x76F8;&#x5E94;&#x7684;&#x9875;&#x9762;&#x5C55;&#x793A;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="&#x66F4;&#x8FDB;&#x4E00;&#x6B65;">&#x66F4;&#x8FDB;&#x4E00;&#x6B65;</h3>
+<p>&#x3000;&#x3000;&#x5728;&#x9875;&#x9762;&#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B58;&#x5728;&#x7740;&#x4E24;&#x79CD;&#x64CD;&#x4F5C;,&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x548C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;,&#x5BF9;&#x4E8E;&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x9875;&#x9762;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x5B8C;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x7ED3;&#x675F;&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x54CD;&#x5E94;&#x7528;&#x6237;,&#x800C;&#x5F02;&#x6B65;&#x7684;&#x64CD;&#x4F5C;&#x9875;&#x9762;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x54CD;&#x5E94;&#x7528;&#x6237;&#x7684;&#x64CD;&#x4F5C;,&#x5F85;&#x5F02;&#x6B65;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x518D;&#x76F8;&#x5E94;&#x7684;&#x66F4;&#x65B0;&#x9875;&#x9762;&#x72B6;&#x6001;&#x3002;&#x90A3;&#x4E48;&#x4F5C;&#x4E3A;&#x63CF;&#x8FF0;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;action,&#x4E5F;&#x5B58;&#x5728;&#x540C;&#x6B65;&#x548C;&apos;&#x5F02;&#x6B65;&apos;,&#x8FD9;&#x91CC;&#x7684;&#x5F02;&#x6B65;&#x6307;&#x7684;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;,&#x63D0;&#x4F9B;&#x7684;&#x7C7B;&#x4F3C;&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x529F;&#x80FD;,&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x7684;actionCreator&#x8FD4;&#x56DE;&#x7684;&#x4E0D;&#x662F;action&#x5BF9;&#x8C61;&#x800C;&#x662F;&#x4E00;&#x4E2A;function,&#x5728;&#x8FD9;&#x4E2A;function&#x4E2D;&#x5B58;&#x5728;&#x7740;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;,&#x4EE5;&#x53CA;&#x9488;&#x5BF9;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x7684;&#x6BCF;&#x4E2A;&#x9636;&#x6BB5;&#x6240;dispatch&#x7684;action&#x3002;</p>
+<p>&#x3000;&#x3000;&#x6211;&#x4EEC;&#x4E3E;&#x4E2A;&#x6817;&#x5B50;,&#x5BF9;&#x4E8E;ajax&#x8BF7;&#x6C42;&#x7684;&#x64CD;&#x4F5C;,&#x6211;&#x4EEC;&#x7684;&#x9875;&#x9762;&#x5F80;&#x5F80;&#x6709;&#x51E0;&#x79CD;&#x72B6;&#x6001;&#x7684;&#x53D8;&#x66F4;,&#x7B2C;&#x4E00;,&#x8BF7;&#x6C42;&#x53D1;&#x8D77;(&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x9875;&#x9762;&#x4F1A;&#x51FA;&#x73B0;loading&#x72B6;&#x6001;,&#x4FD7;&#x79F0;&#x8F6C;&#x83CA;&#x82B1;),&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;action&#x8868;&#x793A;&#x5F00;&#x59CB;&#x8BF7;&#x6C42;&#x4E8B;&#x4EF6;&#x3002;&#x7B2C;&#x4E8C;,&#x8BF7;&#x6C42;&#x6210;&#x529F;&#x54CD;&#x5E94;,&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x9875;&#x9762;&#x4F1A;&#x83B7;&#x53D6;&#x5230;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;,&#x66F4;&#x65B0;UI,&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;action,&#x63CF;&#x8FF0;&#x8BF7;&#x6C42;&#x6210;&#x529F;&#x4E8B;&#x4EF6;,&#x5E76;&#x4F1A;&#x5C06;&#x6210;&#x529F;&#x7684;&#x6570;&#x636E;&#x5E26;&#x4E0A;&#x7ED9;Reducer&#x5904;&#x7406;&#x66F4;&#x65B0;&#x76F8;&#x5E94;&#x7684;UI&#x3002;&#x7B2C;&#x4E09;,&#x5728;&#x6CA1;&#x6709;&#x7B2C;&#x4E8C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;,&#x8BF7;&#x6C42;&#x5931;&#x8D25;,&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x7684;action&#x4EE3;&#x8868;&#x7684;&#x662F;&#x8BF7;&#x6C42;&#x5931;&#x8D25;&#x4E8B;&#x4EF6;,UI&#x5F80;&#x5F80;&#x4F1A;&#x5F39;&#x51FA;&#x5931;&#x8D25;&#x63D0;&#x793A;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x4E00;&#x6B21;&#x5F02;&#x6B65;&#x8FC7;&#x7A0B;&#x4E2D;,&#x4F60;&#x5C06;&#x4F1A;&#x8FDB;&#x884C;&#x4E09;&#x6B21;dispatch&#x3002;</p>
+<p> &#x3000;&#x3000; &#x9762;&#x5BF9;&#x4E00;&#x6B21;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x5C31;&#x9700;&#x8981;&#x4E09;&#x6B21;action,&#x8BA9;&#x4E8B;&#x60C5;&#x53D8;&#x5F97;&#x7E41;&#x7410;,&#x4F46;Redux&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;,&#x8BA9;&#x4F60;&#x5728;&#x9700;&#x8981;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019;,&#x53EA;&#x6709;&#x89E6;&#x53D1;&#x5C01;&#x88C5;&#x597D;&#x4E86;&#x4E09;&#x4E2A;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x7684;&#x51FD;&#x6570;,&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x4EE5;&#x4E0A;&#x8FC7;&#x7A0B;&#x3002;&#x5982;&#x4E0B;:</p>
+<pre class="language-"><code class="lang-javascript"> <span class="token keyword">const</span> ImportRecordsActionCreators <span class="token operator">=</span> <span class="token punctuation">{</span>
+     startLoadRecords <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> <span class="token punctuation">{</span>
+             type <span class="token punctuation">:</span> <span class="token string">&apos;START_LOAD_IMPORT_RECORDS&apos;</span>
+         <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     onRecordsLoad <span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> <span class="token punctuation">{</span>
+             type <span class="token punctuation">:</span> <span class="token string">&apos;ON_IMPORT_RECORDS_LOAD&apos;</span><span class="token punctuation">,</span>
+             payload <span class="token punctuation">:</span> data
+         <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     onRecordsFail <span class="token punctuation">:</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> <span class="token punctuation">{</span>
+             type <span class="token punctuation">:</span> <span class="token string">&apos;ON_IMPORT_RECORDS_FAIL&apos;</span><span class="token punctuation">,</span>
+             payload <span class="token punctuation">:</span> err
+         <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     getImportRecords <span class="token punctuation">:</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+         params<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token string">&apos;601&apos;</span><span class="token punctuation">;</span>
+         <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token function">dispatch</span><span class="token punctuation">(</span>ImportRecordsActionCreators<span class="token punctuation">.</span><span class="token function">startLoadRecords</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                 type<span class="token punctuation">:</span> <span class="token string">&apos;post&apos;</span><span class="token punctuation">,</span>
+                 url<span class="token punctuation">:</span> <span class="token string">&apos;/slice/explore&apos;</span><span class="token punctuation">,</span>
+                 data<span class="token punctuation">:</span> params<span class="token punctuation">,</span>
+                 dataType<span class="token punctuation">:</span> <span class="token string">&apos;json&apos;</span><span class="token punctuation">,</span>
+                 success<span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+                     <span class="token function">dispatch</span><span class="token punctuation">(</span>ImportRecordsActionCreators<span class="token punctuation">.</span><span class="token function">onRecordsLoad</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                 <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                 error<span class="token punctuation">:</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+                     <span class="token function">dispatch</span><span class="token punctuation">(</span>ImportRecordsActionCreators<span class="token punctuation">.</span><span class="token function">onRecordsFail</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                 <span class="token punctuation">}</span>
+             <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">export</span> <span class="token keyword">default</span> ImportRecordsActionCreators<span class="token punctuation">;</span>
+</code></pre>
+<p> &#x4E3A;&#x4E86;&#x4F7F;&#x5F97;store&#x80FD;&#x591F;&#x5904;&#x7406;function&#x5F62;&#x5F0F;&#x7684;action,&#x5728;&#x521B;&#x5EFA;store&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x4F20;&#x5165;<code>redux-thunk</code>&#x63D0;&#x4F9B;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;<code>thunkMiddleware</code>,&#x5BF9;&#x4E8E;&#x4E2D;&#x95F4;&#x4EF6;,&#x6211;&#x4EEC;&#x540E;&#x9762;&#x4F1A;&#x8BB2;&#x5230;&#x3002;&#x5148;&#x6765;&#x770B;&#x4E0B;&#x4EE3;&#x7801;:</p>
+<pre class="language-"><code class="lang-javascript"> <span class="token keyword">import</span> thunkMiddleware <span class="token keyword">from</span> <span class="token string">&apos;redux-thunk&apos;</span>
+ <span class="token keyword">import</span> <span class="token punctuation">{</span> createStore<span class="token punctuation">,</span> applyMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+ <span class="token keyword">import</span> rootReducer <span class="token keyword">from</span> <span class="token string">&apos;./reducers&apos;</span>
+
+ <span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>
+   rootReducer<span class="token punctuation">,</span>
+   <span class="token function">applyMiddleware</span><span class="token punctuation">(</span>
+     thunkMiddleware<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// lets us dispatch() functions</span>
+   <span class="token punctuation">)</span>
+ <span class="token punctuation">)</span>
+</code></pre>
+<p> &#x8FD9;&#x6837;&#x4F60;&#x7684;store&#x5C31;&#x5177;&#x5907;&#x4E86;dispatch&#x5F02;&#x6B65;action(&#x51FD;&#x6570;)&#x7684;&#x80FD;&#x529B;&#x3002;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x8C03;&#x7528;<code>dispatch(ImportRecordsActionCreators.getImportRecords)</code>&#x5C31;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x89E6;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x6240;&#x6D89;&#x53CA;&#x5230;&#x7684;action&#x4E86;&#x3002;</p>
+<h3 id="&#x4E2D;&#x95F4;&#x4EF6;">&#x4E2D;&#x95F4;&#x4EF6;</h3>
+<p>&#x3000;&#x3000;&#x4E2D;&#x95F4;&#x4EF6;&#x8FD9;&#x4E2A;&#x8BCD;&#x5BF9;&#x5927;&#x5BB6;&#x6765;&#x8BF4;&#x5E76;&#x4E0D;&#x964C;&#x751F;,&#x4E00;&#x822C;&#x90FD;&#x662F;&#x5728;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x4E2D;&#x95F4;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x7684;&#x90A3;&#x5C42;&#x63D2;&#x4EF6;,&#x5BF9;&#x4E8E;Express &#x548C; Koa &#x7528;&#x6237;&#x6765;&#x8BF4;,&#x4E2D;&#x95F4;&#x4EF6;&#x5C31;&#x662F;&#x8BF7;&#x6C42;&#x4E4B;&#x540E;&#x548C;&#x54CD;&#x5E94;&#x4E4B;&#x524D;&#x4E2D;&#x95F4;&#x5904;&#x7406;&#x5C42;,&#x6BD4;&#x5982;&#x6DFB;&#x52A0;CORS headers, &#x65E5;&#x5FD7;&#x8BB0;&#x5F55;, &#x538B;&#x7F29;&#x7B49;&#x3002;&#x800C;&#x5BF9;&#x4E8E;Redux&#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x8BF4;,&#x4E3B;&#x8981;&#x662F;&#x4E00;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x6269;&#x5C55;,&#x7528;&#x5728;dispatch action&#x4E4B;&#x540E;&#x548C;action &#x5230;&#x8FBE;&#x5177;&#x4F53;&#x7684;Reducer&#x8FDB;&#x884C;&#x5904;&#x7406;&#x4E4B;&#x524D;&#x7684;&#x90A3;&#x5C42;,&#x7528;&#x4E8E;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;,&#x5D29;&#x6E83;&#x62A5;&#x544A;,&#x5904;&#x7406;&#x5F02;&#x6B65;action,&#x8DEF;&#x7531;&#x7B49;&#x3002;Redux&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x6211;&#x4EEC;&#x4E00;redux-thunk&#x4E3A;&#x4F8B;&#x5B50;,&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre class="language-"><code class="lang-javascript">  <span class="token comment" spellcheck="true">//redux-thunk&#x4EE3;&#x7801;</span>
+<span class="token keyword">function</span> <span class="token function">createThunkMiddleware</span><span class="token punctuation">(</span>extraArgument<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> dispatch<span class="token punctuation">,</span> getState <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> next <span class="token operator">=</span><span class="token operator">&gt;</span> action <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> action <span class="token operator">===</span> <span class="token string">&apos;function&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">action</span><span class="token punctuation">(</span>dispatch<span class="token punctuation">,</span> getState<span class="token punctuation">,</span> extraArgument<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> thunk <span class="token operator">=</span> <span class="token function">createThunkMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thunk<span class="token punctuation">.</span>withExtraArgument <span class="token operator">=</span> createThunkMiddleware<span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> thunk<span class="token punctuation">;</span>
+</code></pre>
+<p>Redux&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x5199;&#x6CD5;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;,&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x8FD4;&#x56DE;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;&#x7684;&#x51FD;&#x6570;:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">(</span><span class="token punctuation">{</span>dispatch<span class="token punctuation">,</span> getState<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> next <span class="token operator">=</span><span class="token operator">&gt;</span> action <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//&#x91CC;&#x9762;&#x4E3A;&#x8FD9;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;</span>
+    <span class="token comment" spellcheck="true">//&#x5904;&#x7406;&#x5B8C;&#x540E;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x5C06;action&#x4EA4;&#x7531;&#x4E0B;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#x5904;&#x7406;</span>
+    <span class="token comment" spellcheck="true">//&#x6B64;&#x65F6;&#x9700;&#x8981;&#x8C03;&#x7528;next(action)</span>
+    <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="reducer-&#x5904;&#x7406;&#x903B;&#x8F91;&#x62C6;&#x5206;&#x65B0;&#x601D;&#x8DEF;">Reducer &#x5904;&#x7406;&#x903B;&#x8F91;&#x62C6;&#x5206;&#x65B0;&#x601D;&#x8DEF;</h3>
+<p>&#x3000;&#x3000;&#x6839;&#x636E;&#x4E4B;&#x524D;Reducer&#x7684;&#x4ECB;&#x7ECD;,&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x5E94;&#x7528;&#x7684;&#x72B6;&#x6001;&#x53D8;&#x5F97;&#x590D;&#x6742;,&#x6570;&#x636E;&#x5C42;&#x6B21;&#x5D4C;&#x5957;&#x591A;&#x7684;&#x65F6;&#x5019;,&#x5FC5;&#x7136;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x53BB;&#x62C6;&#x5206;Reducer&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;,&#x8BA9;&#x591A;&#x4E2A;Reducer&#x5904;&#x7406;&#x4E0D;&#x540C;&#x7684;,&#x81EA;&#x5DF1;&#x5173;&#x5FC3;&#x7684;&#x72B6;&#x6001;&#x6570;&#x636E;,&#x6700;&#x540E;&#x901A;&#x8FC7;combineReducer&#x8FDB;&#x884C;&#x6574;&#x5408;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x4E5F;&#x4F1A;&#x7A81;&#x51FA;&#x65B0;&#x7684;&#x95EE;&#x9898;,&#x5D4C;&#x5957;&#x5C42;&#x6570;&#x591A;&#x7684;State&#x5C31;&#x9700;&#x8981;&#x5D4C;&#x5957;&#x7684;combineReducer,&#x53EF;&#x4EE5;&#x53C2;&#x770B;<a href="http://div.io/topic/1309" target="_blank">&#x6DF1;&#x5165;&#x5230;&#x6E90;&#x7801;&#xFF1A;&#x89E3;&#x8BFB; redux &#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#x4E0E;&#x7528;&#x6CD5;</a>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x63D0;&#x51FA;&#x7684;&#x9488;&#x5BF9;&#x590D;&#x6742;State&#x7684;&#x4E09;&#x79CD;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x65B9;&#x5F0F;,&#x4F7F;&#x5F97;Reducer&#x7684;&#x903B;&#x8F91;&#x80FD;&#x5F97;&#x4EE5;&#x62C6;&#x5206;&#x3002;</p>
+<p>&#x3000;&#x3000;&#x5728;&#x8FD9;&#x79CD;&#x65B9;&#x6848;&#x4E0B;&#x6211;&#x4EEC;&#x4F1A;&#x6309;&#x4E1A;&#x52A1;&#x62C6;&#x5206;Reducer,&#x76F8;&#x540C;&#x4E1A;&#x52A1;&#x7684;Reducers&#x88AB;&#x62C6;&#x5206;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x91CC;,&#x901A;&#x8FC7;Map&#x7684;&#x5F62;&#x5F0F;&#x4EE3;&#x66FF;switch case&#x8BED;&#x53E5;&#x6765;&#x7EC4;&#x7EC7;&#x76F8;&#x540C;&#x4E1A;&#x52A1;&#x7684;Reducers,&#x5176;&#x4E2D;Map&#x7684;key&#x4E3A;&#x5BF9;&#x5E94;Reducer&#x6240;&#x8981;&#x5904;&#x7406;&#x7684;action&#x4E2D;&#x7684;type,Map&#x7684;&#x503C;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;Reducer&#x51FD;&#x6570;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>reducer.js</code>&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x5BFC;&#x5165;&#x6240;&#x6709;&#x7684;Reducers,&#x5BFC;&#x51FA;&#x4E00;&#x4E2A;rootReducer&#x7528;&#x4E8E;&#x521B;&#x5EFA;store&#x3002;&#x5982;&#x4E0B;:</p>
+<ul>
+<li><p>import-records-reducers.js</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span>message<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;antd&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> immutable <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;object-path-immutable&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;START_IMPORT_RECORDS&apos;</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">immutable</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;xxx.loading&apos;</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;ON_IMPORT_RECORDS_LOAD&apos;</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span>payload<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> immOp <span class="token operator">=</span> <span class="token function">immutable</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;xxx.loading&apos;</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token comment" spellcheck="true">// todo something</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> immOp<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;ON_IMPORT_RECORDS_FAIL&apos;</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span>payload<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">immutable</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;xxx.loading&apos;</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>reducer.js</p>
+<pre class="language-"><code class="lang-javascript"> <span class="token keyword">import</span> r1 <span class="token keyword">from</span> <span class="token string">&apos;reducers/import-records-reducer&apos;</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">//&#x521D;&#x59CB;State&#x72B6;&#x6001;</span>
+ <span class="token keyword">const</span> initialState <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+ <span class="token punctuation">}</span>
+
+ <span class="token comment" spellcheck="true">//&#x5408;&#x5E76;&#x6240;&#x6709;reducer Map</span>
+ <span class="token keyword">const</span> reducerMap <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> r1<span class="token comment" spellcheck="true">/*, r2, r3, r4, r5, r6,r7,r8*/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">//&#x5BFC;&#x51FA;rootReducer</span>
+ <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">if</span> <span class="token punctuation">(</span>reducerMap<span class="token punctuation">[</span>action<span class="token punctuation">.</span>type<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> reducerMap<span class="token punctuation">[</span>action<span class="token punctuation">.</span>type<span class="token punctuation">]</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token keyword">typeof</span> action<span class="token punctuation">.</span>payload <span class="token operator">===</span> <span class="token string">&apos;undefined&apos;</span> <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token punctuation">:</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> state
+     <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x7684;action&#x4E5F;&#x5C31;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x8FDB;&#x884C;&#x5212;&#x5206;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x91CC;,&#x8FD9;&#x6837;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x4FBF;&#x4E8E;&#x7EF4;&#x62A4;&#x548C;&#x6269;&#x5C55;&#x3002;</p>
+<h3 id="&#x6700;&#x540E;">&#x6700;&#x540E;</h3>
+<p>Redux&#x56FA;&#x7136;&#x597D;,&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x81EA;&#x8EAB;&#x9879;&#x76EE;&#x7684;&#x5B9E;&#x9645;&#x60C5;&#x51B5;,&#x4ECE;&#x9700;&#x8981;&#x89E3;&#x51B3;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x51FA;&#x53D1;,&#x53BB;&#x8003;&#x8651;&#x662F;&#x4E0D;&#x662F;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#x5F15;&#x5165;Redux,&#x4EE5;&#x53CA;&#x5F15;&#x5165;Redux&#x5229;&#x5F0A;&#x4E4B;&#x95F4;&#x7684;&#x6743;&#x8861;,&#x4EE5;&#x5230;&#x8FBE;&#x53D1;&#x6325;&#x5DE5;&#x5177;&#x6240;&#x5E94;&#x6709;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<p><a href="http://redux.js.org/docs/introduction/" target="_blank">Redux &#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<script type="text/javascript">var className='atoc';</script> 
+
+<footer class="page-footer"><span class="copyright">&#xA9; xdimh all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-03-22 16:55:24
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="gulp-plugin-develop.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: gulp插件开发">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redux 简介","level":"1.6.5","depth":2,"next":{"title":"源码阅读","level":"1.7","depth":1,"ref":"","articles":[{"title":"gulp-prefix插件源码阅读","level":"1.7.1","depth":2,"path":"source-code-read/gulp-prefix.md","ref":"source-code-read/gulp-prefix.md","articles":[]}]},"previous":{"title":"gulp插件开发","level":"1.6.4","depth":2,"path":"mix/gulp-plugin-develop.md","ref":"mix/gulp-plugin-develop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["duoshuo","editlink","prism","jsfiddle","image-captions","jsbin","atoc","tbfed-pagefooter","search-plus","search","-sharing","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy xdimh","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"editlink":{"label":"编辑此页面","multilingual":false,"base":"https://github.com/xdimh/weekly"},"jsfiddle":{"type":"script","tabs":["result","js","css","html"],"height":"500","width":"500","fontColor":"00FF00"},"atoc":{"addClass":true,"className":"atoc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"duoshuo":{"short_name":"xdimh","theme":"default"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"jsbin":{},"search-plus":{},"image-captions":{"caption":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"xdimh","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"react/react-life-cycle.html#fig1.2.1.1","level":"1.2.1","list_caption":"Figure: react-life-cycle","alt":"react-life-cycle","nro":1,"url":"http://rainypin.qiniudn.com/git_imgs/react-life-cycle.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"react-life-cycle","attributes":{},"skip":false,"key":"1.2.1.1"},{"backlink":"react-native/rn-dev-prepare.html#fig1.3.1.1","level":"1.3.1","list_caption":"Figure: android studio","alt":"android studio","nro":2,"url":"http://rainypin.qiniudn.com/git_imgs/android-studio.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"android studio","attributes":{},"skip":false,"key":"1.3.1.1"},{"backlink":"react-native/rn-dev-prepare.html#fig1.3.1.2","level":"1.3.1","list_caption":"Figure: android sdk","alt":"android sdk","nro":3,"url":"http://rainypin.qiniudn.com/git_imgs/android-sdk.png","index":2,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"android sdk","attributes":{},"skip":false,"key":"1.3.1.2"},{"backlink":"react-native/rn-introduction.html#fig1.3.2.1","level":"1.3.2","list_caption":"Figure: react-life-cycle","alt":"react-life-cycle","nro":4,"url":"http://rainypin.qiniudn.com/git_imgs/react-life-cycle.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"react-life-cycle","attributes":{},"skip":false,"key":"1.3.2.1"},{"backlink":"react-native/rn-introduction.html#fig1.3.2.2","level":"1.3.2","list_caption":"Figure: React Native代码调试","alt":"React Native代码调试","nro":5,"url":"http://rainypin.qiniudn.com/git_imgs/rn_debug.png","index":2,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"React Native代码调试","attributes":{},"skip":false,"key":"1.3.2.2"},{"backlink":"react-native/rn-introduction.html#fig1.3.2.3","level":"1.3.2","list_caption":"Figure: React Native 代码断点调试","alt":"React Native 代码断点调试","nro":6,"url":"http://rainypin.qiniudn.com/git_imgs/rn_debug_breakpoint.png","index":3,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"React Native 代码断点调试","attributes":{},"skip":false,"key":"1.3.2.3"},{"backlink":"react-native/rn-introduction.html#fig1.3.2.4","level":"1.3.2","list_caption":"Figure: Native获取zip包大致逻辑","alt":"Native获取zip包大致逻辑","nro":7,"url":"http://rainypin.qiniudn.com/git_imgs/zip-load-flow.png","index":4,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Native获取zip包大致逻辑","attributes":{},"skip":false,"key":"1.3.2.4"},{"backlink":"node/node-stream.html#fig1.5.1.1","level":"1.5.1","list_caption":"Figure: Readable 流程","alt":"Readable 流程","nro":8,"url":"http://tech.meituan.com/img/stream-how-data-comes-out.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Readable 流程","attributes":{},"skip":false,"key":"1.5.1.1"},{"backlink":"node/node-stream.html#fig1.5.1.2","level":"1.5.1","list_caption":"Figure: Writeable 与 Readable 的关系","alt":"Writeable 与 Readable 的关系","nro":9,"url":"https://segmentfault.com/img/bVoLre","index":2,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Writeable 与 Readable 的关系","attributes":{},"skip":false,"key":"1.5.1.2"},{"backlink":"node/node-stream.html#fig1.5.1.3","level":"1.5.1","list_caption":"Figure: Transform 内部工作流程图","alt":"Transform 内部工作流程图","nro":10,"url":"https://segmentfault.com/img/bVoLri","index":3,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Transform 内部工作流程图","attributes":{},"skip":false,"key":"1.5.1.3"},{"backlink":"mix/redux-introduction.html#fig1.6.5.1","level":"1.6.5","list_caption":"Figure: 没有引入redux之前","alt":"没有引入redux之前","nro":11,"url":"http://rainypin.qiniudn.com/git_imgs/no-redux.png","index":1,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"没有引入redux之前","attributes":{},"skip":false,"key":"1.6.5.1"},{"backlink":"mix/redux-introduction.html#fig1.6.5.2","level":"1.6.5","list_caption":"Figure: 引入Redux之后","alt":"引入Redux之后","nro":12,"url":"http://rainypin.qiniudn.com/git_imgs/with-redux.png","index":2,"caption_template":"Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"引入Redux之后","attributes":{},"skip":false,"key":"1.6.5.2"}]},"title":"一条道走到黑","language":"zh-hans","gitbook":"*","description":"一条道走到黑"},"file":{"path":"mix/redux-introduction.md","mtime":"2017-03-22T08:55:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-26T14:42:39.306Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-duoshuo/duoshuo.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-jsfiddle/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-jsbin/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

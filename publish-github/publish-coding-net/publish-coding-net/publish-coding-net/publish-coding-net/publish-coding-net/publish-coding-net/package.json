@@ -1,0 +1,34 @@
+{
+  "name": "weekly",
+  "version": "1.0.1",
+  "description": "一条道走到黑",
+  "dependencies": {
+    "gitbook-plugin-image-captions": "^3.1.0",
+    "gitbook-plugin-atoc": "^1.0.1",
+    "gitbook-plugin-jsbin": "^0.0.12",
+    "gitbook-plugin-jsfiddle": "^1.0.0",
+    "gitbook-plugin-prism": "^2.1.0",
+    "gitbook-plugin-search": "^2.2.1",
+    "gitbook-plugin-search-plus": "^0.0.10",
+    "gitbook-plugin-tbfed-pagefooter": "^0.0.1",
+    "gitbook-plugin-editlink": "^1.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-load-plugins": "^1.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xdimh/weekly.git"
+  },
+  "author": "rainypin <xdimhf@163.com> (https://github.com/xdimh/weekly/issues)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xdimh/weekly/issues"
+  },
+  "homepage": "https://github.com/xdimh/weekly#readme"
+}
