@@ -6,13 +6,13 @@
 
 'use strict';
 const gulp = require('gulp');
-const del = require('del');
+const shell = require('shelljs');
 const gulpLoadPlugins = require('gulp-load-plugins');
 
 const $ = gulpLoadPlugins();
 
-// Publishes the site to GitHub Pages
-gulp.task('publish.github', () => {
+// 推送到github - weekly - gh-pages上
+gulp.task('publish.github',['build'],() => {
     console.log('Publishing to GH Pages');
 return gulp.src(['./_book/**/*','CNAME'])
     .pipe($.ghPages({
@@ -23,15 +23,8 @@ return gulp.src(['./_book/**/*','CNAME'])
 });
 
 
-// gulp.task('del',(cb) => {
-//     del(['.publish/**'], {dryRun: true}).then(paths => {
-//         console.log('Files and folders that would be deleted:\n', paths.join('\n'));
-//         cb();
-//     });
-// });
-
-// Publishes the site to GitHub Pages
-gulp.task('publish.coding.net', () => {
+// 推送到coding.net weely.coding.me 上
+gulp.task('publish.coding.net',['build'],() => {
     console.log('Publishing to coding.net Pages');
     return gulp.src(['./_book/**/*'])
         .pipe($.ghPages({
@@ -41,3 +34,15 @@ gulp.task('publish.coding.net', () => {
             force : true
         }));
 });
+
+gulp.task('build',(cb) => {
+    shell.exec('gitbook build', function(code, stdout, stderr) {
+        if (code == 0) {
+           cb();
+        } else {
+           throw new Error('gitbook build 失败!');
+        }
+    });
+});
+
+gulp.task('publish',['publish.coding.net','publish.github']);
